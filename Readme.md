@@ -1,0 +1,1 @@
+ THe Comp3161 project - MyBook represents a startup consisting of a group of 5 students who have decided to create a social networking website because facebook no longer satisfies their experiences
