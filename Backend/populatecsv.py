@@ -1,28 +1,40 @@
 from faker import Faker
 fake_data = Faker()
 import csv
+from csv import writer
+from csv import reader
+
+noList = []
+with open('user_data.csv', mode ='w', newline='') as fileObj:
+    csvIdData = csv.writer(fileObj, delimiter = ',',)
+    for x in range(1, 10):
+        noList.append(x)
+    for i in noList:
+        csvIdData.writerow([i])
+
 
 class Users:
-    def __init__(self, userID, username, firstName, lastName, email):
-        self.userID = userID
-        self.username = username
+    def __init__(self, firstName, lastName, username, email):
         self.firstName = firstName
         self.lastName = lastName
+        self.username = username
         self.email = email 
     def __repr__(self):
-        return '{},{},{},{},{}'.format(self.userID, self.username, self.email)
+        return '{},{},{},{}'.format(self.firstName, self.lastName, self.username, self.email)
 
-def createUsers(amt):
+def createUsers():
     userList = []
-    for i in range(0, amt):
-        userList.append(Users(fake_data.ssn(),fake_data.user_name(), fake_data.email(), self.firstName, self.lastName,))
+    userList.append(Users(fake_data.first_name(), fake_data.last_name(), fake_data.user_name(), fake_data.email()))
     return userList
 
-with open('user_data.csv', mode ='w', newline='') as csvfile:
-    csvFakeData = csv.writer(csvfile, delimiter = ',',)
-    for i in createUsers(10):
-        csvFakeData.writerow([i])
-
+with open('user_data.csv', mode ='r') as readObj, \
+    open('new_user_data.csv', mode = 'w', newline = '') as writeObj:
+    csv_reader = reader(readObj)
+    csv_writer = writer(writeObj)
+    for row in csv_reader:
+        for i in createUsers():
+            row.append(i)
+        csv_writer.writerow(row)
 class Profile:
     def __init__(self, gender, DOB, firstName, lastName, profilePhoto):
         self.gender = gender

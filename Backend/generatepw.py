@@ -15,12 +15,11 @@ with open ("pwlist.txt", "w") as pwfile:
         
 hashedList = []
 def hashingMethod(pwHash):
-    hash1 = hashlib.md5("pwHash".encode('utf-8'))
-    hash1.hexdigest()
+    hash1 = hashlib.md5(pwHash.encode('utf-8')).hexdigest()
+    return hash1
 
 with open ("pwlist.txt", "r") as passwordFile:
     for line in passwordFile:
-        print(line)
         hashedList.append(hashingMethod(line))
     print(hashedList)
 
