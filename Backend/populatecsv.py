@@ -3,21 +3,23 @@ fake_data = Faker()
 import csv
 
 class Users:
-    def __init__(self, username, email, password):
+    def __init__(self, userID, username, firstName, lastName, email):
+        self.userID = userID
         self.username = username
+        self.firstName = firstName
+        self.lastName = lastName
         self.email = email 
-        self.password = password
     def __repr__(self):
-        return '{},{},{}'.format(self.username, self.email, self.password)
+        return '{},{},{},{},{}'.format(self.userID, self.username, self.email)
 
 def createUsers(amt):
     userList = []
     for i in range(0, amt):
-        userList.append(Users(fake_data.word(), fake_data.email(), fake_data.password(length=12)))
+        userList.append(Users(fake_data.ssn(),fake_data.user_name(), fake_data.email(), self.firstName, self.lastName,))
     return userList
 
-with open('user_data.csv', 'w', newline='') as csvfile:
-    csvFakeData = csv.writer(csvfile)
+with open('user_data.csv', mode ='w', newline='') as csvfile:
+    csvFakeData = csv.writer(csvfile, delimiter = ',',)
     for i in createUsers(10):
         csvFakeData.writerow([i])
 
@@ -25,11 +27,9 @@ class Profile:
     def __init__(self, gender, DOB, firstName, lastName, profilePhoto):
         self.gender = gender
         self.DOB = DOB
-        self.firstName = firstName
-        self.lastName = lastName
         self.profilePhoto = profilePhoto
     def __repr__(self):
-        return '{},{},{},{},{}'.format(self.gender, self.DOB, self.firstName, self.lastName, self.profilePhoto)
+        return '{},{},{}'.format(self.gender, self.DOB, self.profilePhoto)
 
 def createProfile(amt):
     profileList = []
@@ -43,15 +43,14 @@ with open('profile_data.csv', 'w', newline='') as csvfile:
         csvFakeData.writerow([i])
 
 class About:
-    def __init__(self, street, city, country, bio, hobby, telephone):
+    def __init__(self, street, city, country, bio, telephone):
         self.street = street
         self.city = city
         self.country = country
         self.bio = bio
-        self.hobby = hobby
         self.telephone = telephone
     def __repr__(self):
-        return '{},{},{},{},{},{}'.format(self.street, self.city, self.country, self.bio, self.telephone)
+        return '{},{},{},{},{}'.format(self.street, self.city, self.country, self.bio, self.telephone)
 
 def createAbout(amt):
     aboutList = []
@@ -64,4 +63,21 @@ with open('about_data.csv', 'w', newline='') as csvfile:
     for i in createAbout(10):
         csvFakeData.writerow([i])
 
+class Photo:
+    def __init__(self, photoLink, title):
+        self.photoLink = photoLink
+        self.title = title
+    def __repr__(self):
+        return '{},{}'.format(self.photoLink, self.title)
+
+def createPhoto(amt):
+    photoList = []
+    for i in range(0, amt):
+        photoList.append(Photo(fake_data.image_url(),fake_data.sentence(nb_words=7)))
+    return photoList
+
+with open('photo_data.csv', 'w', newline='') as csvfile:
+    csvFakeData = csv.writer(csvfile)
+    for i in createPhoto(10):
+        csvFakeData.writerow([i])
 
