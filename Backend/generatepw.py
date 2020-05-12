@@ -1,6 +1,10 @@
 from faker import Faker
 fake_data = Faker()
 import hashlib
+import csv
+from csv import writer
+from csv import reader
+
 
 def generate_pw(amt):
     pwlist = []
@@ -9,7 +13,7 @@ def generate_pw(amt):
     return pwlist
 
 with open ("pwlist.txt", "w") as pwfile:
-    for line in generate_pw(2):
+    for line in generate_pw(500000):
         data = pwfile.writelines([line])
         pwfile.write("\n")
         
@@ -21,6 +25,9 @@ def hashingMethod(pwHash):
 with open ("pwlist.txt", "r") as passwordFile:
     for line in passwordFile:
         hashedList.append(hashingMethod(line))
-    print(hashedList)
 
+with open('hashed_data.csv', mode ='w', newline='') as fileObj:
+    csvData = csv.writer(fileObj)
+    for i in hashedList:
+        csvData.writerow([i])
 

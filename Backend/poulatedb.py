@@ -16,6 +16,7 @@ cursor. execute("DROP DATABASE mybookdb")
 cursor. execute("CREATE DATABASE mybookdb")
 cursor. execute("USE mybookdb")
 
+
 sqlTables = {}
 
 sqlTables ['userTable'] = (
@@ -25,8 +26,7 @@ sqlTables ['userTable'] = (
     "lastname varchar(60) not null,"
     "username varchar (60) not null,"
     "email VARCHAR(60) not null,"
-    #"passwordSalt varchar (255) not null,"
-    #"passwordHash varchar (255) not null,"
+    "passwordHash varchar (255) not null,"
     "PRIMARY KEY(userID))")
 
 sqlTables ['profileTable'] = (
@@ -125,6 +125,7 @@ for tableName in sqlTables:
     table = sqlTables[tableName]
     cursor.execute(table)
     print("Created Table {}: ".format(tableName),end="")
+
 
 
 cursor.close()
