@@ -4,13 +4,13 @@ import csv
 from csv import writer
 from csv import reader
 
-# noList = []
-# with open('user_data.csv', mode ='w', newline='') as fileObj:
-#     csvIdData = csv.writer(fileObj, delimiter = ',',)
-#     for x in range(1, 500001):
-#         noList.append(x)
-#     for i in noList:
-#         csvIdData.writerow([i])
+noList = []
+with open('post_data.csv', mode ='w', newline='') as fileObj:
+    csvIdData = csv.writer(fileObj, delimiter = ',',)
+    for x in range(500001,1000001):
+        noList.append(x)
+    for i in noList:
+        csvIdData.writerow([i])
 
 
 # class Users:
@@ -37,28 +37,28 @@ from csv import reader
 #         csv_writer.writerow(row)
 
 # print("user complete")
-class Profile:
-    def __init__(self, gender, bio, school, job, profilePhoto):
-        self.gender = gender
-        self.bio = bio    
-        self.school = school
-        self.job = job
-        self.profilePhoto = profilePhoto
-    def __repr__(self):
-        return '{},{},{},{},{}'.format(self.gender, self.bio, self.school, self.job,self.profilePhoto)
+# class Profile:
+#     def __init__(self, gender, bio, school, job, profilePhoto):
+#         self.gender = gender
+#         self.bio = bio    
+#         self.school = school
+#         self.job = job
+#         self.profilePhoto = profilePhoto
+#     def __repr__(self):
+#         return '{},{},{},{},{}'.format(self.gender, self.bio, self.school, self.job,self.profilePhoto)
 
-def createProfile(amt):
-    profileList = []
-    for i in range(0, amt):
-        profileList.append(Profile('F',  fake_data.sentence(nb_words=10), fake_data.company(),fake_data.job(),fake_data.image_url()))
-    return profileList
+# def createProfile(amt):
+#     profileList = []
+#     for i in range(0, amt):
+#         profileList.append(Profile('F',  fake_data.sentence(nb_words=10), fake_data.company(),fake_data.job(),fake_data.image_url()))
+#     return profileList
 
-with open('profile_data.csv', 'w', newline='') as csvfile:
-    csvFakeData = csv.writer(csvfile)
-    for i in createProfile(500001):
-        csvFakeData.writerow([i])
+# with open('profile_data.csv', 'w', newline='') as csvfile:
+#     csvFakeData = csv.writer(csvfile)
+#     for i in createProfile(500001):
+#         csvFakeData.writerow([i])
 
-print("profile complete")
+# print("profile complete")
 
 # class About:
 #     def __init__(self, street, city, country, DOB, hobby, telephone):
@@ -103,3 +103,43 @@ print("profile complete")
 #         csvFakeData.writerow([i])
 
 # print("photo complete")
+
+# class PostTable:
+#     def __init__(self, text, image, postDate):
+#         self.text = text
+#         self.image = image
+#         self.postDate = postDate
+#     def __repr__(self):
+#         return '{},{},{}'.format(self.text, self.image, self.postDate)
+
+# def createPost(amt):
+#     postList = []
+#     for i in range(0, amt):
+#         postList.append(PostTable(fake_data.sentence(nb_words=7),fake_data.image_url(),fake_data.date_between(start_date='-5y', end_date='today')))
+#     return postList
+
+# with open('post_table_data.csv', 'w', newline='') as csvfile:
+#     csvFakeData = csv.writer(csvfile)
+#     for i in createPost(500000):
+#         csvFakeData.writerow([i])
+
+# print("PostTable completed")
+
+# class Post:
+#     def __init__(self, postID):
+#         self.postID = postID
+#     def __repr__(self):
+#         return '{}'.format(self.postID)
+
+# def createPosts(amt):
+#     postList = []
+#     for i in range(0, amt):
+#         postList.append(Post(fake_data.msisdn()))
+#     return postList
+
+# with open('post_data.csv', 'w', newline='') as csvfile:
+#     csvFakeData = csv.writer(csvfile)
+#     for i in createPosts(500000):
+#         csvFakeData.writerow([i])
+
+# print("Post completed")
