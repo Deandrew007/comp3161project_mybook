@@ -1,5 +1,10 @@
+<?php
+    include_once '/phpIncludes/connect.php';
+?>
+
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>FaceApp</title>
 
     <link rel="stylesheet" href="style.css">
@@ -106,10 +111,9 @@
             left: 450px;
         }
     </style>
-  </head>
+</head>
 
-
-  <body>
+<body>
     <div class="background"> 
         <div class ="form-box">
             <h1>FaceApp</h1>
@@ -154,5 +158,5 @@
         }
 
     </script>
-  </body>
+</body>
 </html>
