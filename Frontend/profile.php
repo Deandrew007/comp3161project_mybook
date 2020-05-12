@@ -1,8 +1,13 @@
+<?php
+    include_once '/phpIncludes/connect.php';
+?>
+
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <style>
-             body {
+            body {
                 font-family: 'Open Sans', sans-serif;
                 background: white;
             }
@@ -151,46 +156,46 @@
     <body>
         <div class="profile-container">
             <div class="profile-menu">
-              <div class="image-container">
-                <img src="https://www.nailseatowncouncil.gov.uk/wp-content/uploads/blank-profile-picture-973460_1280.jpg" alt="">
-              </div>
-              <ul>
-                <li class="active">Profile</li>
-                <li>Friends</li>
-                <li>Groups</li>
-                <li>Membership</li>
-                <li>Log out</li>
-              </ul>
+                <div class="image-container">
+                    <img src="https://www.nailseatowncouncil.gov.uk/wp-content/uploads/blank-profile-picture-973460_1280.jpg" alt="">
+                </div>
+                <ul>
+                    <li class="active">Profile</li>
+                    <li>Friends</li>
+                    <li>Groups</li>
+                    <li>Membership</li>
+                    <li>Log out</li>
+                </ul>
             </div>
             <div class="profile-content">
-              <div class="actions">
-                <i class="fa fa-arrow-left" onclick="location.href='navBar.html'"> 
-                </i>
-              </div>
-              <div class="pic">
-                <img src="img/fb.png" alt="">
-                <h2>FaceApp</h2>
-                <span>_____________</span>
-              </div>
-              <div class="summary">
-                <div class="content">
-                  <span>233</span>
-                  <span>Followers</span>
+                <div class="actions">
+                    <i class="fa fa-arrow-left" onclick="location.href='navBar.html'"> 
+                    </i>
                 </div>
-                <div class="content">
-                  <span>349</span>
-                  <span>Following</span>
+                <div class="pic">
+                    <img src="img/fb.png" alt="">
+                    <h2>FaceApp</h2>
+                    <span>_____________</span>
                 </div>
-              </div>
-              <div class="profile-details">
-                <ul>
-                  <li><i class="fa fa-images"></i>Posts<span>35</span></li>
-                  <li><i class="fa fa-camera"></i>Photos<span>236</span></li>
-                  <li><i class="fa fa-edit"></i>Texts<span>26</span></li>
-                  <li><i class="fa fa-comment"></i>Comments<span>100</span></li>
-                </ul>
-              </div>  
+                <div class="summary">
+                    <div class="content">
+                    <span>233</span>
+                    <span>Followers</span>
+                    </div>
+                    <div class="content">
+                    <span>349</span>
+                    <span>Following</span>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <ul>
+                    <li><i class="fa fa-images"></i>Posts<span>35</span></li>
+                    <li><i class="fa fa-camera"></i>Photos<span>236</span></li>
+                    <!-- <li><i class="fa fa-edit"></i>Texts<span>26</span></li> -->
+                    <li><i class="fa fa-comment"></i>Comments<span>100</span></li>
+                    </ul>
+                </div>  
             </div>
-          </div>
+        </div>
     </body>
 </html>
