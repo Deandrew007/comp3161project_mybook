@@ -1,5 +1,10 @@
+<?php
+    include_once '/phpIncludes/connect.php';
+?>
+
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>FaceApp</title>
 
     <link rel="stylesheet" href="style.css">
@@ -9,7 +14,12 @@
             padding: 0;
             font-family: sans-serif;
         }
-        
+        h1{
+            margin: 20;
+            padding: 5 0 20px;
+            text-align: center;
+            font-size: 30px;
+        }
         .background{
             height: 100%;
             width: 100%;
@@ -20,7 +30,7 @@
         }
         .form-box{
             width: 380px;
-            height: 480px;
+            height: 520px;
             position: relative;
             margin: 6% auto;
             background: #fff;
@@ -101,29 +111,31 @@
             left: 450px;
         }
     </style>
-  </head>
+</head>
 
-
-  <body>
+<body>
     <div class="background"> 
         <div class ="form-box">
+            <h1>FaceApp</h1>
             <div class="button-box">
                 <div id="btn"></div>
                 <button type= "button" class="toggle-btn" onclick="login()">Log In</button>
                 <button type= "button" class="toggle-btn" onclick="register()">Register</button>
             </div>
             <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="User ID" required>
-                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="text" class="input-field" placeholder="Username" required>
+                <input type="password" class="input-field" placeholder="Password" required>
                 <input type="checkbox" class="chech-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Log In</button>
+                <button type="submit" class="submit-btn" onclick="location.href='navBar.html'">Log In</button>
             </form>
             <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="User ID" required>
-                <input type="email" class="input-field" placeholder="Email ID" required>
-                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="text" class="input-field" placeholder="First Name" required>
+                <input type="text" class="input-field" placeholder="Last Name" required>
+                <input type="text" class="input-field" placeholder="Username" required>
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="password" class="input-field" placeholder="Password" required>
                 <input type="checkbox" class="chech-box"><span>I agree</span>
-                <button type="submit" class="submit-btn">Register</button>
+                <button type="submit" class="submit-btn" onclick="location.href='index.html'">Register</button>
             </form>
         </div>>
     </div>
@@ -146,5 +158,5 @@
         }
 
     </script>
-  </body>
+</body>
 </html>
