@@ -133,16 +133,5 @@ db.commit()
 db.close()
 
 
-# userFile = open("MOCK_DATA.csv", mode = "r")
-# csvReader = reader(userFile)
 
-# for row in csvReader:
-#         cursor.execute("INSERT INTO users VALUES (%s, %s, %s, %s)", (row[0], row[1], row[2], row[3]))
-#         db.commit()
-
-# cursor.execute("Select * from users")
-# userdata = cursor.fetchall()
-
-# for x in userdata:
-#     print(x[3])
   
