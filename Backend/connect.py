@@ -12,11 +12,12 @@ db = mysql.connect(
 cursor = db.cursor()
 
 
-cursor.execute("Select * from profile")
-proifleData = cursor.fetchall()
+cursor.execute("Select * from profile WHERE profileID >= 10 and profileID <= 20")
+profileData = cursor.fetchall()
 
-for x in proifleData:
-    print(x[3])
+profileList = []
+for x in profileData:
+    print (x)
 
 cursor.close()
 db.close()
