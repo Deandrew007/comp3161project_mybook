@@ -48,10 +48,10 @@ class Profile:
         return '{},{},{},{},{}'.format(self.gender, self.bio, self.school, self.job,self.profilePhoto)
 
 def createProfile(amt):
-    profileList = []
+    jobList = []
     for i in range(0, amt):
-        profileList.append(Profile('F',  fake_data.sentence(nb_words=10), fake_data.company(),fake_data.job(),fake_data.image_url()))
-    return profileList
+        jobList.append(Profile('F',  fake_data.sentence(nb_words=10), fake_data.company(),fake_data.job(),fake_data.image_url()))
+    return jobList
 
 with open('profile_data.csv', 'w', newline='') as csvfile:
     csvFakeData = csv.writer(csvfile)

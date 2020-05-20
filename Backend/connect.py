@@ -15,7 +15,7 @@ cursor = db.cursor()
 cursor.execute("Select * from profile WHERE profileID >= 10 and profileID <= 20")
 profileData = cursor.fetchall()
 
-profileList = []
+jobList = []
 for x in profileData:
     print (x)
 
