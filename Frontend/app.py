@@ -22,17 +22,19 @@ userData = cursor.fetchall()
 bioList = []
 schoolList = []
 jobList = []
+imgList = []
 for x in profileData:
     bioList.append(x[3])
     schoolList.append(x[4])    
     jobList.append(x[5])
+    imgList.append(x[6])
+
 
 fnameList = []
 lnameList = []
 for i in userData:
     fnameList.append(i[2])
     lnameList.append(i[3])
-
 
 
 
@@ -57,7 +59,7 @@ app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def profile():
-    return render_template('p.html', firstname=fnameList[0], lastname=lnameList[0], job = jobList[0], bio = bioList[0], school = schoolList[0])
+    return render_template('p.html', firstname=fnameList[0], lastname=lnameList[0], job = jobList[0], bio = bioList[0], school = schoolList[0], imgLink = imgList[0])
 
 @app.route('/home')
 def home():
