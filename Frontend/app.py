@@ -13,14 +13,27 @@ db = mysql.connect(
 cursor = db.cursor()
 
 
-cursor.execute("Select * from profile WHERE profileID = 10")
+cursor.execute("Select * from profile WHERE userID = 10")
 profileData = cursor.fetchall()
+cursor.execute("Select * from user WHERE userID = 10")
+userData = cursor.fetchall()
 
-profileList = []
-imageList = []
+
+bioList = []
+schoolList = []
+jobList = []
 for x in profileData:
-    profileList.append(x[5])
-    print(profileList)
+    bioList.append(x[3])
+    schoolList.append(x[4])    
+    jobList.append(x[5])
+
+fnameList = []
+lnameList = []
+for i in userData:
+    fnameList.append(i[2])
+    lnameList.append(i[3])
+
+
 
 
 cursor.close()
@@ -28,8 +41,6 @@ db.close()
 
 
 app = Flask(__name__, template_folder='templates')
-
-name = 'DrewDon'
 
 # @app.route('/')
 # def index():
@@ -46,9 +57,11 @@ name = 'DrewDon'
 
 @app.route('/')
 def profile():
-    return render_template('p.html', firstname=name, job = profileList[0])
+    return render_template('p.html', firstname=fnameList[0], lastname=lnameList[0], job = jobList[0], bio = bioList[0], school = schoolList[0])
 
-
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
